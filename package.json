@@ -1,0 +1,25 @@
+{
+  "name": "fractal-media",
+  "version": "1.0.0",
+  "description": "Fractal Social Media",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss scss/app.scss css/main.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jozbi/preEntrega3-Pera.git"
+  },
+  "author": "Javier Pera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jozbi/preEntrega3-Pera/issues"
+  },
+  "homepage": "https://github.com/Jozbi/preEntrega3-Pera#readme",
+  "devDependencies": {
+    "node-sass": "^8.0.0",
+    "nodemon": "^2.0.20"
+  }
+}
