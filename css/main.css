@@ -63,6 +63,63 @@ img {
   .button__gray:hover {
     background-color: #92A2B3; }
 
+/*-----------FILTERS TABS-----------------*/
+.filters__content {
+  margin: 2rem 0 2.5rem;
+  background-color: #EAECF0;
+  padding: .375rem;
+  border-radius: .75rem;
+  display: flex;
+  justify-content: space-between;
+  column-gap: .5rem; }
+
+.filters__button {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  color: #22272B;
+  font-size: 0.813rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  border-radius: .75rem;
+  cursor: pointer;
+  background-color: transparent;
+  transition: .3s; }
+  .filters__button:hover {
+    background-color: #FCFCFD; }
+
+/*----------SHOW/HIDE PROJECTS & FEATURES & BUDGET------------*/
+.filters [data-content] {
+  display: none; }
+
+.filters__active[data-content] {
+  display: grid; }
+
+.filter-tab-active {
+  background-color: #FCFCFD; }
+
+/*-------------FOOTER----------------*/
+.footer__copy {
+  display: block;
+  margin: 2.5rem 0 2rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #92A2B3; }
+
+::-webkit-scrollbar {
+  width: .6rem;
+  border-radius: .5rem;
+  background-color: #a1a9af; }
+
+::-webkit-scrollbar-thumb {
+  width: .6rem;
+  border-radius: .5rem;
+  background-color: #808b93; }
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #677179; }
+
 /*---------------PERFIL--------------------*/
 .profile {
   position: relative;
@@ -132,3 +189,65 @@ img {
 
 .profile__buttons-small {
   column-gap: 0.25rem; }
+
+/*--------------PROJECTS-----------------*/
+.projects__card {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: .3s; }
+  .projects__card img {
+    width: 100%;
+    height: 100%; }
+  .projects__card .projects__modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: -100%;
+    left: 0;
+    background: linear-gradient(180deg, rgba(78, 104, 126, 0.3) 0%, #080a0d 95%);
+    display: grid;
+    align-items: flex-end;
+    padding: 1.5rem 1.25rem;
+    transition: .3s; }
+    .projects__card .projects__modal .projects__subtitle {
+      font-size: 0.75rem; }
+    .projects__card .projects__modal .projects__title {
+      font-size: 1rem;
+      margin-bottom: .75rem; }
+    .projects__card .projects__modal .projects__button {
+      padding: .5rem; }
+
+.projects__subtitle, .projects__title {
+  color: #FFF; }
+
+.projects__card:hover .projects__modal {
+  bottom: 0; }
+
+/*------------------FEATURES----------------------*/
+.features__content {
+  row-gap: 2rem; }
+  .features__content .features__area .features__title {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1.5rem; }
+  .features__content .features__area .features__box {
+    display: flex;
+    justify-content: center;
+    column-gap: 3rem; }
+    .features__content .features__area .features__box .features__group {
+      display: grid;
+      align-content: flex-start;
+      row-gap: 1rem; }
+      .features__content .features__area .features__box .features__group .features__data {
+        display: flex;
+        column-gap: .5rem; }
+        .features__content .features__area .features__box .features__group .features__data i {
+          font-size: 1rem;
+          color: #5997ee; }
+        .features__content .features__area .features__box .features__group .features__data .features__name {
+          font-size: 0.983rem;
+          font-weight: 500;
+          line-height: 18px; }
+        .features__content .features__area .features__box .features__group .features__data .features__level {
+          font-size: 0.75rem; }

@@ -1,0 +1,12 @@
+/*----------SHOW/HIDE PROJECTS & FEATURES & BUDGET------------*/
+.filters [data-content] {
+    display: none;
+}
+
+.filters__active[data-content] {
+    display: grid;
+}
+
+.filter-tab-active {
+    background-color: $body-color;
+}

@@ -6,6 +6,14 @@
 
 //Components
 @import './components/buttons';
+@import './components/filters-tabs';
+
+//Layout
+@import './layout/filters';
+@import './layout/footer';
+@import './layout/scroll-bar';
 
 //Views
 @import './views/profile';
+@import './views/projects';
+@import './views/features';

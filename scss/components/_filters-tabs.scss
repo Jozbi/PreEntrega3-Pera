@@ -1,0 +1,28 @@
+/*-----------FILTERS TABS-----------------*/
+.filters__content {
+    margin: 2rem 0 2.5rem;
+    background-color: $text-color-lighten;
+    padding: .375rem;
+    border-radius: .75rem;
+    display: flex;
+    justify-content: space-between;
+    column-gap: .5rem;
+}
+
+.filters__button {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    color: $title-color;
+    font-size: $small-font-size;
+    font-family: $body-font;
+    font-weight: 500;
+    border-radius: .75rem;
+    cursor: pointer;
+    background-color: transparent;
+    transition: .3s;
+    &:hover{
+        background-color: $body-color;
+    }
+}
