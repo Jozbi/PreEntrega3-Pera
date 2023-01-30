@@ -1,5 +1,4 @@
 //Variables--Colores
-
 $primary-color: #5997ee;
 $primary-color-alt: #468bec;
 $title-color: #22272B;
@@ -8,3 +7,27 @@ $text-color-light: #92A2B3;
 $text-color-lighten: #EAECF0;
 $body-color: #FCFCFD;
 $container-color: #FFF;
+
+//Variables DARK THEME
+$title-color--dark: hsl(207, 12%, 95%);
+$text-color--dark: hsl(221, 13%, 75%);
+$body-color-dark: hsl(240, 41%, 12%);
+$container-color--dark: hsl(240, 24%, 12%);
+
+//Tema Principal
+.theme {
+    --primary-color: #{$primary-color};
+    --primary-color-alt: #{$primary-color-alt};
+    --title-color: #{$title-color};
+    --text-color: #{$text-color};
+    --text-color-light: #{$text-color-light};
+    --text-color-lighten: #{$text-color-lighten};
+    --body-color: #{$body-color};
+    --container-color: #{$container-color};
+    &--dark{
+        --title-color: #{$text-color--dark};
+        --text-color: #{$text-color--dark};
+        --body-color: #{$body-color-dark};
+        --container-color: #{$container-color--dark};
+    }
+}

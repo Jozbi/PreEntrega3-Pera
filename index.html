@@ -9,8 +9,10 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
 </head>
-<body>
+<body class="theme">
     <header class="profile container">
+        <i class="ri-moon-line change-theme" id="theme-button"></i>
+
         <div class="profile__container grid">
             <div class="profile__data">
                 <div class="profile__border">
@@ -61,10 +63,11 @@
             </div>
         </div>
     </header>
+    
     <main class="main">
         <section class="filters container">
             <ul class="filters__content">
-                <button class="filters__button" data-target="#projects">
+                <button class="filters__button  filter-tab-active" data-target="#projects">
                     Proyectos
                 </button>
 
@@ -78,7 +81,7 @@
             </ul>
 
             <div class="filters__sections">
-                <div class="projects__content grid filter-tab-active" data-content id="projects">
+                <div class="projects__content grid filters__active" data-content id="projects">
                     <article class="projects__card">
                         <img src="./images/proyecto-1.png" alt="Panflecto Fiestas 2022" class="projects__img">
                         <div class="projects__modal">

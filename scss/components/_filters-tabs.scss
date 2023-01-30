@@ -1,7 +1,7 @@
 /*-----------FILTERS TABS-----------------*/
 .filters__content {
     margin: 2rem 0 2.5rem;
-    background-color: $text-color-lighten;
+    background-color: var(--text-color-lighten);
     padding: .375rem;
     border-radius: .75rem;
     display: flex;
@@ -14,7 +14,7 @@
     border: none;
     outline: none;
     padding: 1rem;
-    color: $title-color;
+    color: var(--title-color);
     font-size: $small-font-size;
     font-family: $body-font;
     font-weight: 500;
@@ -23,6 +23,6 @@
     background-color: transparent;
     transition: .3s;
     &:hover{
-        background-color: $body-color;
+        background-color: var(--body-color);
     }
 }

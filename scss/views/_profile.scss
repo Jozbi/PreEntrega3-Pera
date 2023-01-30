@@ -8,7 +8,7 @@
             display: grid;
             text-align: center;
             .profile__border {
-                border: 3.5px solid $primary-color;
+                border: 3.5px solid var(--primary-color);
                 justify-self: center;
                 width: 115px;
                 height: 115px;
@@ -38,7 +38,7 @@
             .profile__profession {
                 font-size: $smaller-font-size;
                 font-weight: 500;
-                color: $text-color;
+                color: var(--text-color);
                 margin-bottom: 1rem;
             }
             .profile__social {
@@ -47,10 +47,10 @@
                 column-gap: .75rem;
                 .profile__social--link {
                     font-size: 1.25rem;
-                    color: $title-color;
+                    color: var(--title-color);
                     transition: .3s;
                     &:hover {
-                        color: $primary-color;
+                        color: var(--primary-color);
                     }
                 }
             }

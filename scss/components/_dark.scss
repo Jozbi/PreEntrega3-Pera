@@ -1,0 +1,35 @@
+/*------------------THEME------------------*/
+.change-theme {
+    position: absolute;
+    top: 1.5rem;
+    right: 0;
+    font-size: 1.25rem;
+    color: var(--title-color);
+    cursor: pointer;
+    transition: .3s;
+    &:hover {
+        color: var(--primary-color);
+    }
+}
+
+.theme--dark .button__gray {
+    background-color: var(--container-color);
+    &:hover{
+        background-color: hsl(207, 24%, 16%);
+    }
+}
+
+.theme--dark .filters__content {
+    background-color: var(--container-color);
+}
+
+.theme--dark::-webkit-scrollbar {
+    background-color: hsl(207, 8%, 16%);
+}
+
+.theme--dark::-webkit-scrollbar-thumb {
+    background-color: hsl(207, 8%, 16%);
+    &:hover {
+        background-color: hsl(207, 8%, 32%);
+    }
+}

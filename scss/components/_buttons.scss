@@ -2,7 +2,7 @@
     display: inline-flex;
     align-items: center;
     column-gap: .5rem;
-    background-color: $primary-color;
+    background-color: var(--primary-color);
     color: #FFF;
     padding: 1.15rem 1.5rem;
     border-radius: .5rem;
@@ -12,7 +12,7 @@
         font-size: 1.25rem;
     }
     &:hover {
-        background-color: $primary-color-alt;
+        background-color: var(--primary-color-alt);
     }
 }
 
@@ -22,9 +22,9 @@
 }
 
 .button__gray {
-    background-color: $text-color-lighten;
-    color: $title-color;
+    background-color: var(--text-color-lighten);
+    color: var(--title-color);
     &:hover {
-        background-color: $text-color-light;
+        background-color: var(--text-color-light);
     }
 }

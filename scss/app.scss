@@ -7,6 +7,7 @@
 //Components
 @import './components/buttons';
 @import './components/filters-tabs';
+@import './components/dark';
 
 //Layout
 @import './layout/filters';
@@ -17,3 +18,6 @@
 @import './views/profile';
 @import './views/projects';
 @import './views/features';
+
+//Responsive
+@import './base/breakpoints';
