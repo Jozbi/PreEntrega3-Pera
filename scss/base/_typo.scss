@@ -2,17 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 $body-font: 'Poppins', sans-serif;
-$h2-font-size: 1.25rem;
-$h3-font-size: 1rem;
-$normal-font-size: .983rem;
-$small-font-size: .813rem;
-$smaller-font-size: .75rem;
-
-/*Responsive Typography*/
-@media screen and (min-width: 992px) {
-    $h2-font-size: 1.5rem;
-    $h3-font-size: 1.25rem;
-    $normal-font-size: 1rem;
-    $small-font-size: .875rem;
-    $smaller-font-size: .813rem;
-}
+$h2-font-size: (
+    null: 1.25rem,
+    '992px': 1.5rem
+);
+$h3-font-size: (
+    null : 1rem,
+    '992px': 1.25rem
+);
+$normal-font-size: (
+    null : .983rem,
+    '992px': 1rem
+);
+$small-font-size: (
+    null : .813rem,
+    '992px': .875rem
+);
+$smaller-font-size: (
+    null : .75rem,
+    '992px': .813rem
+);

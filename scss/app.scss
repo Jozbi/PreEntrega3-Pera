@@ -1,7 +1,10 @@
+//Utilities
+@import './utilities/mixins';
+
 //Base
 @import './base/colors';
 @import './base/reset';
-@import './base/typo';
+@import './base/_typo';
 @import './base/global';
 
 //Components

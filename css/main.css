@@ -27,7 +27,6 @@ a {
   text-decoration: none; }
 
 /*Typography*/
-/*Responsive Typography*/
 /*------------------GLOBAL----------------*/
 body {
   font-family: "Poppins", sans-serif;
@@ -35,6 +34,9 @@ body {
   background-color: var(--body-color);
   color: var(--text-color);
   transition: .3s; }
+  @media screen and (min-width: 992px) {
+    body {
+      font-size: 1rem; } }
 
 h1, h2, h3 {
   color: var(--title-color);
@@ -102,6 +104,9 @@ img {
   cursor: pointer;
   background-color: transparent;
   transition: .3s; }
+  @media screen and (min-width: 992px) {
+    .filters__button {
+      font-size: 0.875rem; } }
   .filters__button:hover {
     background-color: var(--body-color); }
 
@@ -150,6 +155,9 @@ img {
   text-align: center;
   font-size: 0.75rem;
   color: var(--text-color-light); }
+  @media screen and (min-width: 992px) {
+    .footer__copy {
+      font-size: 0.813rem; } }
 
 ::-webkit-scrollbar {
   width: .6rem;
@@ -195,11 +203,17 @@ img {
             width: 75px; }
       .profile .profile__container .profile__data .profile__name {
         font-size: 1.25rem; }
+        @media screen and (min-width: 992px) {
+          .profile .profile__container .profile__data .profile__name {
+            font-size: 1.5rem; } }
       .profile .profile__container .profile__data .profile__profession {
         font-size: 0.75rem;
         font-weight: 500;
         color: var(--text-color);
         margin-bottom: 1rem; }
+        @media screen and (min-width: 992px) {
+          .profile .profile__container .profile__data .profile__profession {
+            font-size: 0.813rem; } }
       .profile .profile__container .profile__data .profile__social {
         display: flex;
         justify-content: center;
@@ -219,9 +233,15 @@ img {
         .profile .profile__container .profile__info .profile__info-group .profile__info-number {
           font-size: 0.983rem;
           margin-bottom: .25rem; }
+          @media screen and (min-width: 992px) {
+            .profile .profile__container .profile__info .profile__info-group .profile__info-number {
+              font-size: 1rem; } }
         .profile .profile__container .profile__info .profile__info-group .profile__info-description {
           font-size: 0.75rem;
           font-weight: 500; }
+          @media screen and (min-width: 992px) {
+            .profile .profile__container .profile__info .profile__info-group .profile__info-description {
+              font-size: 0.813rem; } }
 
 .profile__buttons, .profile__buttons-small {
   display: flex;
@@ -235,33 +255,41 @@ img {
   column-gap: 0.25rem; }
 
 /*--------------PROJECTS-----------------*/
-.projects__card {
-  position: relative;
-  border-radius: 1rem;
-  overflow: hidden;
-  transition: .3s; }
-  .projects__card img {
-    width: 250px;
-    height: auto;
-    object-fit: cover; }
-  .projects__card .projects__modal {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: -100%;
-    left: 0;
-    background: linear-gradient(180deg, rgba(78, 104, 126, 0.3) 0%, #080a0d 95%);
-    display: grid;
-    align-items: flex-end;
-    padding: 1.5rem 1.25rem;
+.projects__content {
+  justify-content: center; }
+  .projects__content .projects__card {
+    width: auto;
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
     transition: .3s; }
-    .projects__card .projects__modal .projects__subtitle {
-      font-size: 0.75rem; }
-    .projects__card .projects__modal .projects__title {
-      font-size: 1rem;
-      margin-bottom: .75rem; }
-    .projects__card .projects__modal .projects__button {
-      padding: .5rem; }
+    .projects__content .projects__card img {
+      width: 100%;
+      height: 100%; }
+    .projects__content .projects__card .projects__modal {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      bottom: -100%;
+      left: 0;
+      background: linear-gradient(180deg, rgba(78, 104, 126, 0.3) 0%, #080a0d 95%);
+      display: grid;
+      align-items: flex-end;
+      padding: 1.5rem 1.25rem;
+      transition: .3s; }
+      .projects__content .projects__card .projects__modal .projects__subtitle {
+        font-size: 0.75rem; }
+        @media screen and (min-width: 992px) {
+          .projects__content .projects__card .projects__modal .projects__subtitle {
+            font-size: 0.813rem; } }
+      .projects__content .projects__card .projects__modal .projects__title {
+        font-size: 1rem;
+        margin-bottom: .75rem; }
+        @media screen and (min-width: 992px) {
+          .projects__content .projects__card .projects__modal .projects__title {
+            font-size: 1.25rem; } }
+      .projects__content .projects__card .projects__modal .projects__button {
+        padding: .5rem; }
 
 .projects__subtitle, .projects__title {
   color: #FFF; }
@@ -276,6 +304,9 @@ img {
     font-size: 1rem;
     text-align: center;
     margin-bottom: 1.5rem; }
+    @media screen and (min-width: 992px) {
+      .features__content .features__area .features__title {
+        font-size: 1.25rem; } }
   .features__content .features__area .features__box {
     display: flex;
     justify-content: center;
@@ -294,8 +325,14 @@ img {
           font-size: 0.983rem;
           font-weight: 500;
           line-height: 18px; }
+          @media screen and (min-width: 992px) {
+            .features__content .features__area .features__box .features__group .features__data .features__name {
+              font-size: 1rem; } }
         .features__content .features__area .features__box .features__group .features__data .features__level {
           font-size: 0.75rem; }
+          @media screen and (min-width: 992px) {
+            .features__content .features__area .features__box .features__group .features__data .features__level {
+              font-size: 0.813rem; } }
 
 /*----------------BREAKPOINTS------------------*/
 /*For Small Devices*/
@@ -353,7 +390,12 @@ img {
     .profile .profile__container .profile__info {
       column-gap: 3rem; }
       .profile .profile__container .profile__info .profile__info-group .profile__info-description {
-        font-size: 0.983rem; }
+        font-size: 0.983rem; } }
+      @media screen and (min-width: 992px) and (min-width: 992px) {
+        .profile .profile__container .profile__info .profile__info-group .profile__info-description {
+          font-size: 1rem; } }
+
+@media screen and (min-width: 992px) {
   .profile_buttons {
     column-gap: 2rem; }
   .projects__content {
@@ -361,7 +403,12 @@ img {
   .projects__modal {
     padding: 1.5rem; }
   .features__title {
-    font-size: var(--normal-font-size);
-    margin-bottom: 2.5rem; }
+    font-size: 0.983rem;
+    margin-bottom: 2.5rem; } }
+  @media screen and (min-width: 992px) and (min-width: 992px) {
+    .features__title {
+      font-size: 1rem; } }
+
+@media screen and (min-width: 992px) {
   .footer__copy {
     margin: 4.5rem 0 2.5rem; } }

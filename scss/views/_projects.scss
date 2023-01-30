@@ -1,36 +1,39 @@
 /*--------------PROJECTS-----------------*/
-.projects__card {
-    position: relative;
-    border-radius: 1rem;
-    overflow: hidden;
-    transition: .3s;
-    img {
-        width: 250px;
-        height: auto;
-        object-fit: cover;
-    }
-    .projects__modal {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        bottom: -100%;
-        left: 0;
-        background: linear-gradient(180deg,
-                    rgba(78, 104, 126, 0.3) 0%,
-                    hsl(216, 24%, 4%) 95%);
-        display: grid;
-        align-items: flex-end;
-        padding: 1.5rem 1.25rem;
+.projects__content {
+    justify-content: center;
+    .projects__card {
+        width: auto;
+        position: relative;
+        border-radius: 1rem;
+        overflow: hidden;
         transition: .3s;
-        .projects__subtitle {
-            font-size: $smaller-font-size;
+        img {
+            width: 100%;
+            height: 100%;
         }
-        .projects__title {
-            font-size: $h3-font-size;
-            margin-bottom: .75rem;
-        }
-        .projects__button {
-            padding: .5rem;
+        .projects__modal {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            bottom: -100%;
+            left: 0;
+            background: linear-gradient(180deg,
+                        rgba(78, 104, 126, 0.3) 0%,
+                        hsl(216, 24%, 4%) 95%);
+            display: grid;
+            align-items: flex-end;
+            padding: 1.5rem 1.25rem;
+            transition: .3s;
+            .projects__subtitle {
+                @include font-size($smaller-font-size);
+            }
+            .projects__title {
+                @include font-size($h3-font-size);
+                margin-bottom: .75rem;
+            }
+            .projects__button {
+                padding: .5rem;
+            }
         }
     }
 }

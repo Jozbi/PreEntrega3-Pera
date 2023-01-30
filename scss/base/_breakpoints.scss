@@ -82,7 +82,7 @@
                 column-gap: 3rem;
                 .profile__info-group {
                     .profile__info-description{
-                        font-size: $normal-font-size;
+                       @include font-size($normal-font-size);
                     }
                 }
             }
@@ -103,7 +103,7 @@
     }
 
     .features__title {
-        font-size: var(--normal-font-size);
+        @include font-size($normal-font-size);
         margin-bottom: 2.5rem;
     }
     .footer__copy {

@@ -33,10 +33,10 @@
                 }
             }
             .profile__name {
-                font-size: $h2-font-size;
+                @include font-size($h2-font-size);
             }
             .profile__profession {
-                font-size: $smaller-font-size;
+                @include font-size($smaller-font-size);
                 font-weight: 500;
                 color: var(--text-color);
                 margin-bottom: 1rem;
@@ -62,11 +62,11 @@
             .profile__info-group {
                 text-align: center;
                 .profile__info-number {
-                    font-size: $normal-font-size;
+                    @include font-size($normal-font-size);
                     margin-bottom: .25rem;
                 }
                 .profile__info-description {
-                    font-size: $smaller-font-size;
+                    @include font-size($smaller-font-size);
                     font-weight: 500;
                 }
             }
