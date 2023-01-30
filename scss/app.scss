@@ -4,7 +4,8 @@
 @import './base/typo';
 @import './base/global';
 
-//Layout
-@import './layout/header';
+//Components
+@import './components/buttons';
 
 //Views
+@import './views/profile';
