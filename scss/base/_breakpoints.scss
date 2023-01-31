@@ -23,10 +23,16 @@
     .filters__content {
         flex-wrap: wrap;
     }
+
     .budget__content {
         .budget__app {
             .app_form {
                 flex-wrap: wrap;
+            }
+        }
+        .budget__data {
+            .data__list {
+                padding: 0 0;
             }
         }
     }
@@ -43,6 +49,13 @@
     .filters__content {
         width: 332px;
         margin: 3rem auto;
+    }
+    .features__content {
+        .features__area {
+            .features__box {
+                column-gap: 2rem;
+            }
+        }
     }
 }
 
@@ -106,7 +119,9 @@
     .profile_buttons{
         column-gap: 2rem;
     }
-
+    .profile__buttons-small {
+        column-gap: .6rem;
+    }
     .projects__content {
         gap: 2rem 3rem;
     }
@@ -124,5 +139,16 @@
     }
     .filters__content {
         width: 800px;
+    }
+    .budget__content {
+        .budget__data {
+            .data__list {
+                column-gap: 10rem;
+                padding: 0;
+                .list--element {
+                    @include font-size($normal-font-size);
+                }
+            }
+        }
     }
 }

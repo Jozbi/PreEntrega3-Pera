@@ -30,7 +30,7 @@ a {
 /*------------------GLOBAL----------------*/
 body {
   font-family: "Poppins", sans-serif;
-  font-size: 0.983rem;
+  font-size: 0.875rem;
   background-color: var(--body-color);
   color: var(--text-color);
   transition: .3s; }
@@ -107,6 +107,9 @@ img {
   cursor: pointer;
   background-color: transparent;
   transition: .3s; }
+  @media screen and (min-width: 380px) {
+    .filters__button {
+      font-size: 0.85rem; } }
   @media screen and (min-width: 992px) {
     .filters__button {
       font-size: 0.875rem; } }
@@ -243,7 +246,7 @@ img {
       .profile .profile__container .profile__info .profile__info-group {
         text-align: center; }
         .profile .profile__container .profile__info .profile__info-group .profile__info-number {
-          font-size: 0.983rem;
+          font-size: 0.875rem;
           margin-bottom: .25rem; }
           @media screen and (min-width: 992px) {
             .profile .profile__container .profile__info .profile__info-group .profile__info-number {
@@ -322,7 +325,7 @@ img {
   .features__content .features__area .features__box {
     display: flex;
     justify-content: center;
-    column-gap: 3rem; }
+    column-gap: .5rem; }
     .features__content .features__area .features__box .features__group {
       display: grid;
       align-content: flex-start;
@@ -334,7 +337,7 @@ img {
           font-size: 1rem;
           color: var(--primary-color); }
         .features__content .features__area .features__box .features__group .features__data .features__name {
-          font-size: 0.983rem;
+          font-size: 0.875rem;
           font-weight: 500;
           line-height: 18px; }
           @media screen and (min-width: 992px) {
@@ -347,14 +350,19 @@ img {
               font-size: 0.813rem; } }
 
 .budget__content {
+  width: 100%;
   justify-content: center; }
   .budget__content .budget__app {
-    width: auto;
+    width: 100%;
     justify-content: center;
     text-align: center;
     margin-bottom: 2rem; }
     .budget__content .budget__app .app--title {
-      margin-bottom: 3rem; }
+      margin-bottom: 3rem;
+      font-size: 1rem; }
+      @media screen and (min-width: 992px) {
+        .budget__content .budget__app .app--title {
+          font-size: 1.25rem; } }
     .budget__content .budget__app .app--form {
       display: flex;
       justify-content: center;
@@ -375,29 +383,39 @@ img {
           outline: none;
           border: none; }
   .budget__content .budget__data {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; }
     .budget__content .budget__data .data--title {
       text-align: center;
-      margin-bottom: 3rem; }
+      margin-bottom: 2rem;
+      font-size: 1rem; }
+      @media screen and (min-width: 992px) {
+        .budget__content .budget__data .data--title {
+          font-size: 1.25rem; } }
     .budget__content .budget__data .data__list {
+      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center; }
+      align-items: center;
+      padding: 0 2rem; }
       .budget__content .budget__data .data__list .list--element {
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        column-gap: 10rem;
+        column-gap: 2rem;
         margin-bottom: 2rem;
-        font-size: 1rem; }
+        font-size: 0.813rem; }
+        @media screen and (min-width: 380px) {
+          .budget__content .budget__data .data__list .list--element {
+            font-size: 0.85rem; } }
         @media screen and (min-width: 992px) {
           .budget__content .budget__data .data__list .list--element {
-            font-size: 1.25rem; } }
+            font-size: 0.875rem; } }
         .budget__content .budget__data .data__list .list--element .right {
           display: flex;
           align-items: center;
@@ -415,7 +433,7 @@ img {
 .select--box {
   display: flex;
   flex-direction: column;
-  width: 400px; }
+  width: 250px; }
   .select--box .options--container {
     background-color: var(--container-color);
     color: var(--text-color);
@@ -455,9 +473,9 @@ img {
       background-repeat: no-repeat;
       position: absolute;
       height: 100%;
-      width: 32px;
+      width: 20px;
       right: 12px;
-      top: 10px;
+      top: 12px;
       transition: all 0.4s; }
 
 .select--box .option, .selected {
@@ -489,7 +507,9 @@ img {
   .filters__content {
     flex-wrap: wrap; }
   .budget__content .budget__app .app_form {
-    flex-wrap: wrap; } }
+    flex-wrap: wrap; }
+  .budget__content .budget__data .data__list {
+    padding: 0 0; } }
 
 /*For Medium Devices*/
 @media screen and (min-width: 576px) {
@@ -498,7 +518,9 @@ img {
     justify-content: center; }
   .filters__content {
     width: 332px;
-    margin: 3rem auto; } }
+    margin: 3rem auto; }
+  .features__content .features__area .features__box {
+    column-gap: 2rem; } }
 
 @media screen and (min-width: 776px) {
   .projects__content, .features__content {
@@ -534,7 +556,7 @@ img {
     .profile .profile__container .profile__info {
       column-gap: 3rem; }
       .profile .profile__container .profile__info .profile__info-group .profile__info-description {
-        font-size: 0.983rem; } }
+        font-size: 0.875rem; } }
       @media screen and (min-width: 992px) and (min-width: 992px) {
         .profile .profile__container .profile__info .profile__info-group .profile__info-description {
           font-size: 1rem; } }
@@ -542,12 +564,14 @@ img {
 @media screen and (min-width: 992px) {
   .profile_buttons {
     column-gap: 2rem; }
+  .profile__buttons-small {
+    column-gap: .6rem; }
   .projects__content {
     gap: 2rem 3rem; }
   .projects__modal {
     padding: 1.5rem; }
   .features__title {
-    font-size: 0.983rem;
+    font-size: 0.875rem;
     margin-bottom: 2.5rem; } }
   @media screen and (min-width: 992px) and (min-width: 992px) {
     .features__title {
@@ -557,4 +581,12 @@ img {
   .footer__copy {
     margin: 4.5rem 0 2.5rem; }
   .filters__content {
-    width: 800px; } }
+    width: 800px; }
+  .budget__content .budget__data .data__list {
+    column-gap: 10rem;
+    padding: 0; }
+    .budget__content .budget__data .data__list .list--element {
+      font-size: 0.875rem; } }
+    @media screen and (min-width: 992px) and (min-width: 992px) {
+      .budget__content .budget__data .data__list .list--element {
+        font-size: 1rem; } }

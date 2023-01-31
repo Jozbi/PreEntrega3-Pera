@@ -1,12 +1,14 @@
 .budget__content {
+    width: 100%;
     justify-content: center;
     .budget__app {
-        width: auto;
+        width: 100%;
         justify-content: center;
         text-align: center;
         margin-bottom: 2rem;
         .app--title {
             margin-bottom: 3rem;
+            @include font-size ($h3-font-size);
         }
         .app--form {
             display: flex;
@@ -33,27 +35,31 @@
         }
     }
     .budget__data {
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         .data--title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
+            @include font-size($h3-font-size);
         }
         .data__list {
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding: 0 2rem;
             .list--element {
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                column-gap: 10rem;
+                column-gap: 2rem;
                 margin-bottom: 2rem;
-                @include font-size($h3-font-size);
+                @include font-size($small-font-size);
                 .right {
                     display: flex;
                     align-items: center;
@@ -79,7 +85,7 @@
 .select--box {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 250px;
     .options--container {
         background-color: var(--container-color);
         color: var(--text-color);
@@ -129,9 +135,9 @@
             background-repeat: no-repeat;
             position: absolute;
             height: 100%;
-            width: 32px;
+            width: 20px;
             right: 12px;
-            top: 10px;
+            top: 12px;
             transition: all 0.4s;
         }
     }
