@@ -63,7 +63,7 @@ const mostrarLista = () => {
             <div class="right">
                 <div class="element__price"><span>+${producto._precio}</span></div>
                 <div class="element__delete">                            
-                    <button class="button button__small button__gray element__delete--btn" id="element__delete--btn"  onclick='deleteElement(${producto._id})'>                                    
+                    <button class="button button__small button__gray element__delete--btn" id="element__delete--btn"  onclick="deleteElement('${producto._id}')">                                    
                         <i class="ri-close-circle-line"></i>                                        
                     </button>                                    
                 </div>                               
@@ -85,7 +85,8 @@ button.addEventListener("click", () => {
 
 /**========================= ELIMINAR DEL ARRAY =========================== */
 const deleteElement = (id) =>{
-    let element = ingresos.findIndex(ingreso=> ingreso._id === id);
+    let element = ingresos.findIndex(ingreso => ingreso._id === id);
+    console.log(element);
     ingresos.splice(element, 1);
     cargarTotal();
     mostrarLista();
