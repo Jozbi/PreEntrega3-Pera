@@ -1,4 +1,4 @@
-/*FILTERS TABS*/
+/*=====================FILTERS TABS======================*/
 const tabs = document.querySelectorAll('[data-target]');
 const tabContents = document.querySelectorAll('[data-content]');
 
@@ -18,7 +18,7 @@ tabs.forEach(tab =>{
     })
 })
 
-/**DARK-LIGHT THEME */
+/**==================DARK-LIGHT THEME =======================*/
 const themeButton = document.getElementById('theme-button');
 const darkTheme = 'theme--dark';
 const iconTheme = 'ri-sun-line';

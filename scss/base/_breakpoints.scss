@@ -23,7 +23,16 @@
     .filters__content {
         flex-wrap: wrap;
     }
+    .budget__content {
+        .budget__app {
+            .app_form {
+                flex-wrap: wrap;
+            }
+        }
+    }
 }
+
+
 /*For Medium Devices*/
 @media screen and  (min-width: 576px){
     .projects__content {
@@ -36,11 +45,15 @@
         margin: 3rem auto;
     }
 }
+
 @media screen and (min-width: 776px){
     .projects__content, .features__content {
         grid-template-columns: repeat(2, 332px);
     }
-
+    .filters__content {
+        width: 400px;
+        margin: 3rem auto;
+    }
     .features__content {
         justify-content: center;
         column-gap: 3rem;
@@ -108,5 +121,8 @@
     }
     .footer__copy {
         margin: 4.5rem 0 2.5rem;
+    }
+    .filters__content {
+        width: 800px;
     }
 }

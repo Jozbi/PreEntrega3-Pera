@@ -23,6 +23,22 @@
     background-color: var(--container-color);
 }
 
+.theme--dark .option--container {
+    background-color: var(--container-color);
+}
+
+.theme--dark .select--box{
+    .option {
+        &:hover {
+            background-color: var(--body-color);
+        }
+    }
+}
+
+.theme--dark .select--box .selected {
+    background-color: var(--container-color);
+}
+
 .theme--dark::-webkit-scrollbar {
     background-color: hsl(207, 8%, 16%);
 }

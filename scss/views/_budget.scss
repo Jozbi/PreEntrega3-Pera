@@ -1,0 +1,152 @@
+.budget__content {
+    justify-content: center;
+    .budget__app {
+        width: auto;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 2rem;
+        .app--title {
+            margin-bottom: 3rem;
+        }
+        .app--form {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            column-gap: 3rem;
+            flex-wrap: wrap;
+            .app--data{
+                display: flex;
+                column-gap: 2.5rem;
+                align-items: center;
+                justify-content: center;
+                margin-top: .25rem;
+                .service__total {
+                    width: auto;
+                    height: 100%;
+                }
+                .button__budget {
+                    height: 100%;
+                    outline: none;
+                    border: none;
+                }
+            }
+        }
+    }
+    .budget__data {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .data--title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .data__list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .list--element {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                column-gap: 10rem;
+                margin-bottom: 2rem;
+                @include font-size($h3-font-size);
+                .right {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 1rem;
+                    .element__delete {
+                        .element__delete--btn {
+                            border: none;
+                            outline: none;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            .total__budget {
+                span {
+                    @include font-size($h3-font-size);
+                }
+            }
+        }
+    }
+}
+
+.select--box {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    .options--container {
+        background-color: var(--container-color);
+        color: var(--text-color);
+        max-height: 0;
+        width: 100%;
+        opacity: 0;
+        transition: all 0.4s;
+        border-radius: 8px;
+        overflow: hidden;
+        order: 1;
+        &::-webkit-scrollbar {
+            width: 8px;
+            background-color: hsl(207, 8%, 66%);
+            border-radius: 0 8px 8px 0;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: hsl(207, 8%, 54%);
+            border-radius: 0 8px 8px 0;
+            &:hover {
+                background-color: hsl(207, 8%, 44%);
+            }
+        }
+    
+    }
+    label {
+        cursor: pointer;
+    }
+    .option {
+        .radio {
+            display: none;
+        }
+        &:hover {
+            background-color: var(--text-color-lighten);
+        }
+    }
+    .selected {
+        background-color: var(--text-color-lighten);
+        border-radius: 8px;
+        margin-bottom: 8px;
+        color: var(--text-color);
+        position: relative;
+        order: 0;
+        &::after {
+            content: "";
+            background: url(../images/arrow-down.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            height: 100%;
+            width: 32px;
+            right: 12px;
+            top: 10px;
+            transition: all 0.4s;
+        }
+    }
+}
+
+.select--box .option, .selected {
+    padding: 12px 24px;
+    cursor: pointer;
+}
+.select--box .options--container.active {
+    max-height: 240px;
+    opacity: 1;
+    overflow-y: scroll;
+}
+.select--box .options--container.active + .selected::after {
+    transform: rotateX(180deg);
+    top: -6px
+}
