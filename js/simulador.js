@@ -95,9 +95,27 @@ const addButton = document.getElementById("add__button");
 addButton.addEventListener('click', recibeInfo);
 
 function deleteItem(td) {
-    serviciosSelecionados = serviciosSelecionados.filter(elemento => elemento._id != td.id);
-    td.parentElement.parentElement.remove()
-    costoTotal();
+    Swal.fire({
+        title: 'Estas seguro?',
+        text: "No podras volver atras!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminar!',
+        cancelButtonText: 'Cancelar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            serviciosSelecionados = serviciosSelecionados.filter(elemento => elemento._id != td.id);
+            td.parentElement.parentElement.remove()
+            costoTotal();
+            Swal.fire(
+                'Eliminado!',
+                'Servicio quitado de la lista.',
+                'Exito'
+            )
+        }
+      })
 }
 
 /**=====================TOTAL======================== */
