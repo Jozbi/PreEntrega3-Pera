@@ -1,4 +1,4 @@
-/*=====================FILTERS TABS======================*/
+/*======================FILTERS TABS======================*/
 const tabs = document.querySelectorAll('[data-target]');
 const tabContents = document.querySelectorAll('[data-content]');
 
@@ -17,7 +17,6 @@ tabs.forEach(tab =>{
         tab.classList.add('filter-tab-active')
     })
 })
-
 /**==================DARK-LIGHT THEME =======================*/
 const themeButton = document.getElementById('theme-button');
 const darkTheme = 'theme--dark';
@@ -31,7 +30,7 @@ const selectedIcon = localStorage.getItem('selected-icon');
 const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light';
 const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moon-line' : 'ri-sun-line';
 
-//Validacion para saber si el usuario escogio previamente un tema
+//Validacion para saber si el usuario selecciono previamente un tema
 if (selectedTheme) {
     document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
     themeButton.classList[selectedIcon === 'ri-moon-line' ? 'add' : 'remove'](iconTheme);

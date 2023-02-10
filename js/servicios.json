@@ -1,0 +1,58 @@
+[
+    {
+        "_nombre":"Diseño de Logotipo",
+        "_precio":5000,
+        "_id":1,
+        "_tipo":"Diseño Gráfico",
+        "_idProducto":"diseñoLogotipo"
+    },
+    {
+        "_nombre":"Identidad de Marca",
+        "_precio":8000,
+        "_id":2,
+        "_tipo":"Diseño Gráfico",
+        "_idProducto":"identidadMarca"
+    },
+    {
+        "_nombre":"Manual de Marca",
+        "_precio":10000,
+        "_id":3,
+        "_tipo":"Diseño Gráfico",
+        "_idProducto":"manualMarca"
+    },
+    {
+        "_nombre":"Diseño de Papelería",
+        "_precio":3000,
+        "_id":4,
+        "_tipo":"Diseño Gráfico",
+        "_idProducto":"diseñoPapeleria"
+    },
+    {
+        "_nombre":"Crea tu Comunidad",
+        "_precio":4000,
+        "_id":5,
+        "_tipo":"Community Manager",
+        "_idProducto":"creaComunidad"
+    },
+    {
+        "_nombre":"Diseño para Redes Sociales",
+        "_precio":7000,
+        "_id":6,
+        "_tipo":"Community Manager",
+        "_idProducto":"diseñoRedesSociales"
+    },
+    {
+        "_nombre":"Diseño de Flyers",
+        "_precio":1500,
+        "_id":7,
+        "_tipo":"Community Manager",
+        "_idProducto":"diseñoFlyers"
+    },
+    {
+        "_nombre":"Publiaciones Personalizadas",
+        "_precio":9000,
+        "_id":8,
+        "_tipo":"Community Manager",
+        "_idProducto":"publicacionesPersonalizadas"
+    }
+]

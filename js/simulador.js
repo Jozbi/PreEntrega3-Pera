@@ -1,93 +1,82 @@
 /**=========CREAR LISTA DE SERVICIOS DISPONIBLES============== */
-let listaServicios = document.getElementById("options--container");
-
-for (let i = 0; i < serviciosDisponibles.length; i++){
-    let option= serviciosDisponibles[i];
-    let div = document.createElement("div");
-    div.className = "option";
-    listaServicios.appendChild(div);
-    div.innerHTML = `<input type="radio" class="radio" id=${option._id} name="service"> <label for=${option._id}>${option._nombre}</label>`;
+let contenedorServicios = document.getElementById("options--container");
+function cargarServicios() { 
+    fetch('./js/servicios.json')
+        .then(respuesta => respuesta.json())
+        .then(servicios => {
+            servicios.forEach(servicio => {
+                let div = document.createElement("div");
+                div.className = "option";
+                contenedorServicios.appendChild(div);
+                div.innerHTML = `<input type="radio" class="radio" id=${servicio._idProducto} name="service"> <label for=${servicio._idProducto}>${servicio._nombre}</label>`;
+            });
+        })
 }
-
-/**=====================CUSTOM OPTIONS======================== */
+cargarServicios();
+/**=====================LISTA SERVICIOS======================== */
 const selected = document.querySelector(".selected");
 const optionsContainer = document.querySelector(".options--container");
-let servicioElegido;
-const optionsList = document.querySelectorAll(".option");
+let optionsList = document.querySelectorAll(".option");
+
+setTimeout(function(){
+    optionsList = document.querySelectorAll(".option");
+}, 2000);
+
+setTimeout(function(){
+    optionsList.forEach(service => {
+        service.addEventListener("click", () => {
+            selected.innerHTML = service.querySelector("label").innerHTML;
+            service.querySelector("input").checked = true; 
+            optionsContainer.classList.remove("active");
+        });
+    });
+}, 3000)
 
 selected.addEventListener("click", () => {
     optionsContainer.classList.toggle("active");
-})
+});
 
-optionsList.forEach(o => {
-    o.addEventListener("click", () =>{
-        selected.innerHTML = o.querySelector("label").innerHTML;
-        o.querySelector("input").checked = true;
-        optionsContainer.classList.remove("active");
-        servicioElegido = serviciosDisponibles.find(servicio => servicio._nombre === selected.textContent);
-        document.getElementById("service--price").innerText = `$${servicioElegido._precio}`;
-    })
-})
-
-/**=============ARRAY DE INGRESOS=========== */
-const ingresos = [];
-
-let totalIngresos = () => {
-    let totalIngreso = 0;
-    for (let ingreso of ingresos){
-        totalIngreso += ingreso._precio;
+/**=====================AGREGAR SERVICIO======================== */
+const tabla = document.querySelector('#listaServicios tbody');
+let serviciosSelecionados = [];
+const recibeInfo = async () => {
+    try {
+        const response = await fetch('./js/servicios.json', {cache: 'no-cache'});
+        if(response.ok){
+            const jsonResponse = await response.json();
+            mostrarResultado(jsonResponse);
+        }
+    } catch (error) {
+        console.log(error);
     }
-    return totalIngreso;
+};
+
+const mostrarResultado = (servicios) => {
+    const servicioSelecionado = servicios.find(servicio => servicio._nombre === selected.textContent);
+    if (serviciosSelecionados.some( nombreServicio=> nombreServicio._nombre === servicioSelecionado._nombre)){
+        alert('Ya lo seleccionaste gil, no se')
+    } else {
+        serviciosSelecionados.push(servicioSelecionado);
+        const row = document.createElement('tr');
+        row.innerHTML += `
+        <td>${servicioSelecionado._nombre}</td>
+        <td>$${servicioSelecionado._precio}</td>
+        <td>${servicioSelecionado._tipo}</td>
+        <td>
+            <button class="button button__small button__gray delete--btn" id="${servicioSelecionado._id}" onclick='deleteItem(this)'">                                    
+                <i class="ri-close-circle-line"></i>                                        
+            </button> 
+        </td>
+        `;
+        tabla.appendChild(row);
+    }
+
 }
 
-let cargarTotal = () =>{
-    let presupuesto = totalIngresos();
-    document.getElementById('total__budget').innerText = `Total: $${presupuesto}`;
-}
+const addButton = document.getElementById("add__button");
+addButton.addEventListener('click', recibeInfo);
 
-cargarTotal();
-
-/**====================================MOSTRAR LISTA============================================= */
-const mostrarLista = () => {
-    [].forEach.call(document.querySelectorAll(".list--element"), function(elemento){
-        elemento.parentNode.removeChild(elemento);
-    });
-
-    for (producto of ingresos){
-        let listaTotales = document.getElementById("data__list");
-        let div = document.createElement("div");
-        div.className = "list--element";
-        listaTotales.insertBefore(div, listaTotales.children[0]);
-        div.innerHTML = `
-            <div class="element__name">${producto._nombre}</div>
-            <div class="right">
-                <div class="element__price"><span>+${producto._precio}</span></div>
-                <div class="element__delete">                            
-                    <button class="button button__small button__gray element__delete--btn" id="element__delete--btn"  onclick="deleteElement('${producto._id}')">                                    
-                        <i class="ri-close-circle-line"></i>                                        
-                    </button>                                    
-                </div>                               
-            </div>                                                        
-            `;
-    }
-}
-
-/**========================= AGREGAR AL ARRAY DE INGRESO =========================== */
-const button = document.getElementById("budget__button");
-
-button.addEventListener("click", () => {
-    if (servicioElegido !== undefined) {
-        ingresos.push(servicioElegido);
-        cargarTotal();
-        mostrarLista();
-    }
-})
-
-/**========================= ELIMINAR DEL ARRAY =========================== */
-const deleteElement = (id) =>{
-    let element = ingresos.findIndex(ingreso => ingreso._id === id);
-    console.log(element);
-    ingresos.splice(element, 1);
-    cargarTotal();
-    mostrarLista();
+function deleteItem(e) {
+    serviciosSelecionados = serviciosSelecionados.filter(elemento => elemento._id != e.id);
+    e.parentElement.parentElement.remove()
 }

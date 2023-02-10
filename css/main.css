@@ -358,11 +358,23 @@ img {
     text-align: center;
     margin-bottom: 2rem; }
     .budget__content .budget__app .app--title {
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
       font-size: 1rem; }
       @media screen and (min-width: 992px) {
         .budget__content .budget__app .app--title {
           font-size: 1.25rem; } }
+    .budget__content .budget__app .app--text {
+      width: 75%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2rem;
+      font-size: 0.813rem; }
+      @media screen and (min-width: 380px) {
+        .budget__content .budget__app .app--text {
+          font-size: 0.85rem; } }
+      @media screen and (min-width: 992px) {
+        .budget__content .budget__app .app--text {
+          font-size: 0.875rem; } }
     .budget__content .budget__app .app--form {
       display: flex;
       justify-content: center;
@@ -395,14 +407,14 @@ img {
       @media screen and (min-width: 992px) {
         .budget__content .budget__data .data--title {
           font-size: 1.25rem; } }
-    .budget__content .budget__data .data__list {
+    .budget__content .budget__data .data__table {
       width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 0 2rem; }
-      .budget__content .budget__data .data__list .list--element {
+      .budget__content .budget__data .data__table .list--element {
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -411,29 +423,29 @@ img {
         margin-bottom: 2rem;
         font-size: 0.813rem; }
         @media screen and (min-width: 380px) {
-          .budget__content .budget__data .data__list .list--element {
+          .budget__content .budget__data .data__table .list--element {
             font-size: 0.85rem; } }
         @media screen and (min-width: 992px) {
-          .budget__content .budget__data .data__list .list--element {
+          .budget__content .budget__data .data__table .list--element {
             font-size: 0.875rem; } }
-        .budget__content .budget__data .data__list .list--element .right {
+        .budget__content .budget__data .data__table .list--element .right {
           display: flex;
           align-items: center;
           column-gap: 1rem; }
-          .budget__content .budget__data .data__list .list--element .right .element__delete .element__delete--btn {
+          .budget__content .budget__data .data__table .list--element .right .element__delete .element__delete--btn {
             border: none;
             outline: none;
             cursor: pointer; }
-      .budget__content .budget__data .data__list .total__budget span {
+      .budget__content .budget__data .data__table .total__budget span {
         font-size: 1rem; }
         @media screen and (min-width: 992px) {
-          .budget__content .budget__data .data__list .total__budget span {
+          .budget__content .budget__data .data__table .total__budget span {
             font-size: 1.25rem; } }
 
 .select--box {
   display: flex;
   flex-direction: column;
-  width: 250px; }
+  width: 300px; }
   .select--box .options--container {
     background-color: var(--container-color);
     color: var(--text-color);
@@ -466,17 +478,6 @@ img {
     color: var(--text-color);
     position: relative;
     order: 0; }
-    .select--box .selected::after {
-      content: "";
-      background: url(../images/arrow-down.svg);
-      background-size: contain;
-      background-repeat: no-repeat;
-      position: absolute;
-      height: 100%;
-      width: 20px;
-      right: 12px;
-      top: 12px;
-      transition: all 0.4s; }
 
 .select--box .option, .selected {
   padding: 12px 24px;
