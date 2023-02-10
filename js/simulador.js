@@ -30,7 +30,7 @@ setTimeout(function(){
             optionsContainer.classList.remove("active");
         });
     });
-}, 3000)
+}, 2000)
 
 selected.addEventListener("click", () => {
     optionsContainer.classList.toggle("active");
@@ -44,7 +44,14 @@ const recibeInfo = async () => {
         const response = await fetch('./js/servicios.json', {cache: 'no-cache'});
         if(response.ok){
             const jsonResponse = await response.json();
-            mostrarResultado(jsonResponse);
+            if (selected.innerText === 'Selecciona un Servicio'){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Primero seleccione un servicio.',
+                  })
+            } else {
+                mostrarResultado(jsonResponse);
+            }
         }
     } catch (error) {
         console.log(error);
@@ -54,7 +61,10 @@ const recibeInfo = async () => {
 const mostrarResultado = (servicios) => {
     const servicioSelecionado = servicios.find(servicio => servicio._nombre === selected.textContent);
     if (serviciosSelecionados.some( nombreServicio=> nombreServicio._nombre === servicioSelecionado._nombre)){
-        alert('Ya lo seleccionaste gil, no se')
+        Swal.fire({
+            icon: 'error',
+            title: 'Solo se permite una unidad por servicio.',
+          })
     } else {
         serviciosSelecionados.push(servicioSelecionado);
         const row = document.createElement('tr');
@@ -68,7 +78,15 @@ const mostrarResultado = (servicios) => {
             </button> 
         </td>
         `;
-        tabla.appendChild(row);
+        tabla.insertBefore(row, tabla.children[0]);
+        costoTotal();
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Servicio Agregado',
+            showConfirmButton: false,
+            timer: 1500
+          })
     }
 
 }
@@ -76,7 +94,36 @@ const mostrarResultado = (servicios) => {
 const addButton = document.getElementById("add__button");
 addButton.addEventListener('click', recibeInfo);
 
-function deleteItem(e) {
-    serviciosSelecionados = serviciosSelecionados.filter(elemento => elemento._id != e.id);
-    e.parentElement.parentElement.remove()
+function deleteItem(td) {
+    serviciosSelecionados = serviciosSelecionados.filter(elemento => elemento._id != td.id);
+    td.parentElement.parentElement.remove()
+    costoTotal();
 }
+
+/**=====================TOTAL======================== */
+const totalFinal = (servicios) => {
+    let total = 0;
+    for (precios of servicios) {
+        console.log(precios);
+        total += precios._precio;
+    }
+    return total;
+}
+const costoTotal = () => {
+    let totalTd = document.getElementById('totalBudget');
+    let precioFinal = totalFinal(serviciosSelecionados);
+    if (totalTd === null) {
+        const row = document.createElement('tr');
+        row.id = 'totalBudget';
+        row.innerHTML += `
+        <td>Costo Total</td>
+        <td id="totalPrice">$${precioFinal}</td>
+        `;
+        tabla.appendChild(row);
+    } else if (serviciosSelecionados.length === 0){
+        totalTd.remove();
+    } else {
+        let totalPrice = document.getElementById('totalPrice');
+        totalPrice.innerHTML = `$${precioFinal}`;
+    }
+};

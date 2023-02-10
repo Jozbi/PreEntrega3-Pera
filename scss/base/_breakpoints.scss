@@ -57,6 +57,29 @@
             }
         }
     }
+    .budget__content {
+        .budget__data {
+            .data__table {
+                table {
+                    thead {
+                        tr {
+                            th {
+                                padding: 1rem;
+                                
+                            }
+                        }
+                    }
+                    tbody {
+                        tr {
+                            td {
+                                padding: 1rem;
+                            }
+                        }
+                    }
+               }
+            }
+        }
+    }
 }
 
 @media screen and (min-width: 776px){
